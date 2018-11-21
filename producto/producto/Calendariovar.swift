@@ -12,5 +12,7 @@ let calendario = Calendar.current
 
 let day = calendario.component(.day, from: date)
 let weekday = calendario.component(.weekday, from: date)
-let month = calendario.component(.month, from: date) - 1
-let year = calendario.component(.year, from: date)
+var month = calendario.component(.month, from: date) - 1
+var year = calendario.component(.year, from: date)
+
+

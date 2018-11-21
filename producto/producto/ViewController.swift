@@ -18,7 +18,11 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     let diasmes = ["Lunes","Martes","Miercoles","Jueves","Viernes"]
     let diasdelmes =  [31,28,31,30,31,30,31,31,30,31,30,31]
     var currentMes = String()
-    
+    var numero = Int()
+    var siguientenumero = Int()
+    var anteriornumero = 0
+    var direccion = 0
+    var posicion = 0
     override func viewDidLoad() {
         super.viewDidLoad()
       currentMes = Meses[month]
@@ -27,9 +31,35 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     }
 
     @IBAction func siguiente(_ sender: Any) {
+        switch currentMes {
+        case "Diciembre":
+            month = 0
+            year += 1
+             currentMes = Meses[month]
+            labelmeses.text = "\(currentMes)\(year)"
+            Calendario.reloadData()
+        default:
+            month += 1
+            currentMes = Meses[month]
+            labelmeses.text = "\(currentMes)\(year)"
+            Calendario.reloadData()
+        }
     }
   
     @IBAction func atras(_ sender: Any) {
+        switch currentMes {
+        case "Enero":
+            month = 11
+            year -= 1
+            currentMes = Meses[month]
+            labelmeses.text = "\(currentMes)\(year)"
+            Calendario.reloadData()
+        default:
+            month -= 1
+            currentMes = Meses[month]
+            labelmeses.text = "\(currentMes)\(year)"
+            Calendario.reloadData()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
