@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource{
+class ViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, UIScrollViewDelegate {
     
-
+    
     @IBOutlet weak var Calendario: UICollectionView!
     @IBOutlet weak var labelmeses: UILabel!
     
@@ -18,17 +18,27 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     let diasmes = ["Lunes","Martes","Miercoles","Jueves","Viernes"]
     let diasdelmes =  [31,28,31,30,31,30,31,31,30,31,30,31]
     var currentMes = String()
+    
+    
+    
+    
     var numero = Int()
     var siguientenumero = Int()
     var anteriornumero = 0
     var direccion = 0
     var posicion = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      currentMes = Meses[month]
-        labelmeses.text = "\(currentMes)\(year)"
-        
+    
+    currentMes = Meses[month]
+    labelmeses.text = "\(currentMes)\(year)"
+    
+
     }
+
+   
 
     @IBAction func siguiente(_ sender: Any) {
         switch currentMes {

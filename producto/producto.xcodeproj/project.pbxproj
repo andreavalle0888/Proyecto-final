@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA2EC7C421A70F5F00587462 /* paginadeinicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */; };
 		FAD8EE2F21A5AFE400D92B05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */; };
 		FAD8EE3121A5AFE400D92B05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8EE3021A5AFE400D92B05 /* ViewController.swift */; };
 		FAD8EE3421A5AFE400D92B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD8EE3221A5AFE400D92B05 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paginadeinicioViewController.swift; sourceTree = "<group>"; };
 		FAD8EE2B21A5AFE400D92B05 /* producto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = producto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD8EE3021A5AFE400D92B05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */,
 				FAD8EE3021A5AFE400D92B05 /* ViewController.swift */,
+				FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */,
 				FAD8EE4221A5B5B700D92B05 /* Calendariovar.swift */,
 				FAD8EE4021A5B3DB00D92B05 /* FechasCollectionViewCell.swift */,
 				FAD8EE3221A5AFE400D92B05 /* Main.storyboard */,
@@ -144,6 +147,7 @@
 				FAD8EE3121A5AFE400D92B05 /* ViewController.swift in Sources */,
 				FAD8EE4321A5B5B700D92B05 /* Calendariovar.swift in Sources */,
 				FAD8EE2F21A5AFE400D92B05 /* AppDelegate.swift in Sources */,
+				FA2EC7C421A70F5F00587462 /* paginadeinicioViewController.swift in Sources */,
 				FAD8EE4121A5B3DB00D92B05 /* FechasCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
