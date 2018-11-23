@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, UIScrollViewDelegate {
+class ViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
     
     
     @IBOutlet weak var Calendario: UICollectionView!
@@ -20,7 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     var currentMes = String()
     var yearbi = 2
     
-    
+    var dayCounter = 0
     var numero = Int()
     var siguientenumero = Int()
     var anteriornumero = 0
@@ -33,8 +33,10 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     
     currentMes = Meses[month]
     labelmeses.text = "\(currentMes)\(year)"
-       
-    
+        if weekday == 0{
+            weekday = 7
+        }
+     GetStartDateDayPosition()
     }
 
    
@@ -100,15 +102,22 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     }
     
     func GetStartDateDayPosition(){
-        switch direccion{
+        switch direccion {
         case 0:
-          /*  numero = weekday
+           numero = weekday
             dayCounter = day
             while dayCounter > 0{
                 numero = numero - 1
-                dayCounter = dayCounter - 1*/
+                dayCounter = dayCounter - 1
+                if numero == 0{
+                    numero = 7
+                }}
+           
+                if numero == 7{
+                    numero = 0
+                }
                 
-          switch day{
+         /* switch day{
             case 1...7:
                 numero = weekday - day
             case 8...14:
@@ -120,9 +129,8 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             case 29...31:
                 numero = weekday - day - 28
             default:
-                break
+                break*/
             
-    }
             posicion = numero
         case 1...:
             siguientenumero = (posicion + diasdelmes[month])%7
@@ -193,6 +201,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
       return cell
 }
 }
+
 
 
 
