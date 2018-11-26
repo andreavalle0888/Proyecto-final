@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+import UserNotifications
 class ViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
     
     
     @IBOutlet weak var Calendario: UICollectionView!
     @IBOutlet weak var labelmeses: UILabel!
+    
+    var dayS: String!
+    var monthS: String!
     
     let Meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre", "Diciembre"]
     let diasmes = ["Lunes","Martes","Miercoles","Jueves","Viernes"]
@@ -30,6 +33,14 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Tienes un evento"
+        content.body = "Body"
+        content.sound = UNNotificationSound.default
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: "testIdentifier", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     
     currentMes = Meses[month]
     labelmeses.text = "\(currentMes)\(year)"
@@ -117,19 +128,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
                     numero = 0
                 }
                 
-         /* switch day{
-            case 1...7:
-                numero = weekday - day
-            case 8...14:
-                numero = weekday - day - 7
-            case 15...21:
-                numero = weekday - day - 14
-            case 22...28:
-                numero = weekday - day - 21
-            case 29...31:
-                numero = weekday - day - 28
-            default:
-                break*/
+        
             
             posicion = numero
         case 1...:
@@ -200,7 +199,38 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         
       return cell
 }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let cell = (collectionView.cellForItem(at: indexPath)! as? FechasCollectionViewCell)!
+        
+        cell.backgroundColor = UIColor.init(red: 2/250, green: 2/250, blue: 200/250, alpha: 0.3)
+        
+        guard cell.fechalabel.text != nil else { return }
+            
+        print(cell.fechalabel.text!)
+        print(labelmeses.text!)
+        dayS = cell.fechalabel.text as! String
+        monthS = labelmeses.text as! String
+        
+        self.performSegue(withIdentifier: "toRegistrarDatos", sender: nil)
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = (collectionView.cellForItem(at: indexPath)! as? FechasCollectionViewCell)!
+        cell.backgroundColor = UIColor.white
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRegistrarDatos"{
+
+            let indexPath = Calendario.indexPathsForSelectedItems
+
+            let destino = segue.destination as? RegistrarDatosViewController
+            
+            destino?.dia = dayS
+            destino?.mes = monthS
+        }
+    }
 }
+
 
 
 

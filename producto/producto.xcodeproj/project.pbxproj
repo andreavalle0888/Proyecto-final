@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA12EDAC21A8A632000F3C8D /* RegistrarDatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */; };
 		FA2EC7C421A70F5F00587462 /* paginadeinicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */; };
 		FAD8EE2F21A5AFE400D92B05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */; };
 		FAD8EE3121A5AFE400D92B05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8EE3021A5AFE400D92B05 /* ViewController.swift */; };
@@ -15,9 +16,11 @@
 		FAD8EE3921A5AFE500D92B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD8EE3721A5AFE500D92B05 /* LaunchScreen.storyboard */; };
 		FAD8EE4121A5B3DB00D92B05 /* FechasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8EE4021A5B3DB00D92B05 /* FechasCollectionViewCell.swift */; };
 		FAD8EE4321A5B5B700D92B05 /* Calendariovar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8EE4221A5B5B700D92B05 /* Calendariovar.swift */; };
+		FADB586021AC55D20014BBDA /* daySelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB585F21AC55D20014BBDA /* daySelected.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarDatosViewController.swift; sourceTree = "<group>"; };
 		FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paginadeinicioViewController.swift; sourceTree = "<group>"; };
 		FAD8EE2B21A5AFE400D92B05 /* producto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = producto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,8 @@
 		FAD8EE3A21A5AFE500D92B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAD8EE4021A5B3DB00D92B05 /* FechasCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FechasCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAD8EE4221A5B5B700D92B05 /* Calendariovar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendariovar.swift; sourceTree = "<group>"; };
+		FADB585F21AC55D20014BBDA /* daySelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daySelected.swift; sourceTree = "<group>"; };
+		FAFA447A21AC933D00DCA676 /* producto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = producto.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +65,18 @@
 		FAD8EE2D21A5AFE400D92B05 /* producto */ = {
 			isa = PBXGroup;
 			children = (
+				FAFA447A21AC933D00DCA676 /* producto.entitlements */,
 				FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */,
 				FAD8EE3021A5AFE400D92B05 /* ViewController.swift */,
 				FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */,
-				FAD8EE4221A5B5B700D92B05 /* Calendariovar.swift */,
 				FAD8EE4021A5B3DB00D92B05 /* FechasCollectionViewCell.swift */,
+				FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */,
 				FAD8EE3221A5AFE400D92B05 /* Main.storyboard */,
 				FAD8EE3521A5AFE500D92B05 /* Assets.xcassets */,
 				FAD8EE3721A5AFE500D92B05 /* LaunchScreen.storyboard */,
 				FAD8EE3A21A5AFE500D92B05 /* Info.plist */,
+				FAD8EE4221A5B5B700D92B05 /* Calendariovar.swift */,
+				FADB585F21AC55D20014BBDA /* daySelected.swift */,
 			);
 			path = producto;
 			sourceTree = "<group>";
@@ -105,6 +113,14 @@
 				TargetAttributes = {
 					FAD8EE2A21A5AFE400D92B05 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -144,6 +160,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA12EDAC21A8A632000F3C8D /* RegistrarDatosViewController.swift in Sources */,
+				FADB586021AC55D20014BBDA /* daySelected.swift in Sources */,
 				FAD8EE3121A5AFE400D92B05 /* ViewController.swift in Sources */,
 				FAD8EE4321A5B5B700D92B05 /* Calendariovar.swift in Sources */,
 				FAD8EE2F21A5AFE400D92B05 /* AppDelegate.swift in Sources */,
@@ -294,7 +312,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = producto/producto.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53TQ588SJ5;
 				INFOPLIST_FILE = producto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,7 +332,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = producto/producto.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53TQ588SJ5;
 				INFOPLIST_FILE = producto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
