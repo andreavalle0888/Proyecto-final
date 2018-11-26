@@ -57,7 +57,7 @@
         <!--View Controller-->
         <scene sceneID="pNm-Co-EZp">
             <objects>
-                <viewController id="C9W-q3-KOD" sceneMemberID="viewController">
+                <viewController id="C9W-q3-KOD" customClass="ViewController" customModule="producto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zFA-AG-TlL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

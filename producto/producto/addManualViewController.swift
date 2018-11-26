@@ -17,6 +17,8 @@ class addManualViewController: UIViewController {
     var dateRegist: daySelected!
     var dateCollectionR = [daySelected]()
     var strDate: String!
+    var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+    var month: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,10 @@ class addManualViewController: UIViewController {
 
     @IBAction func pickerAction(_ sender: UIDatePicker) {
         var dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "Month"
+        var m = dateFormatter.string(from: pickerOutlet.date)
+        month = meses[Int(m)!-1]
+        dateFormatter.dateFormat = "dd"
         strDate = dateFormatter.string(from: pickerOutlet.date)
 
     }
@@ -35,7 +40,7 @@ class addManualViewController: UIViewController {
         
         let registD = UserDefaults.standard
         
-        dateRegist = daySelected(day: actividad.text! , month: "Noviembre", description: strDate)
+        dateRegist = daySelected(day: actividad.text! , month: month, description: strDate)
         
         if let listEvents = registD.value(forKey: "dateEvents") as? Data{
             let temp = try? PropertyListDecoder().decode(Array<daySelected>.self, from: listEvents)
@@ -47,7 +52,7 @@ class addManualViewController: UIViewController {
         
         registD.set(try? PropertyListEncoder().encode(dateCollectionR), forKey: "dateEvents")
         
-        print("Ya se registró")
+        print("Ya se registró") //Agregar alerta
         
         print(dateCollectionR)
         
