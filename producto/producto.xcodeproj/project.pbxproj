@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FA12EDAC21A8A632000F3C8D /* RegistrarDatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */; };
 		FA2CD52621AC9811002E3E75 /* addManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CD52521AC9811002E3E75 /* addManualViewController.swift */; };
-		FA2CD52A21ACA6D0002E3E75 /* InicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CD52921ACA6D0002E3E75 /* InicioViewController.swift */; };
 		FA2EC7C421A70F5F00587462 /* paginadeinicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */; };
 		FAD8EE2F21A5AFE400D92B05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */; };
 		FAD8EE3121A5AFE400D92B05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8EE3021A5AFE400D92B05 /* ViewController.swift */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarDatosViewController.swift; sourceTree = "<group>"; };
 		FA2CD52521AC9811002E3E75 /* addManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addManualViewController.swift; sourceTree = "<group>"; };
-		FA2CD52921ACA6D0002E3E75 /* InicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioViewController.swift; sourceTree = "<group>"; };
 		FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paginadeinicioViewController.swift; sourceTree = "<group>"; };
 		FAD8EE2B21A5AFE400D92B05 /* producto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = producto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 				FAD8EE4221A5B5B700D92B05 /* Calendariovar.swift */,
 				FADB585F21AC55D20014BBDA /* daySelected.swift */,
 				FA2CD52521AC9811002E3E75 /* addManualViewController.swift */,
-				FA2CD52921ACA6D0002E3E75 /* InicioViewController.swift */,
 			);
 			path = producto;
 			sourceTree = "<group>";
@@ -167,7 +164,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA12EDAC21A8A632000F3C8D /* RegistrarDatosViewController.swift in Sources */,
-				FA2CD52A21ACA6D0002E3E75 /* InicioViewController.swift in Sources */,
 				FADB586021AC55D20014BBDA /* daySelected.swift in Sources */,
 				FAD8EE3121A5AFE400D92B05 /* ViewController.swift in Sources */,
 				FAD8EE4321A5B5B700D92B05 /* Calendariovar.swift in Sources */,
