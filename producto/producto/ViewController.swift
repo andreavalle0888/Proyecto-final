@@ -16,6 +16,10 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     
     var dayS: String!
     var monthS: String!
+    var isEventVC: Bool! = false
+    var dateEventsVC = [daySelected]()
+    var cellSelectedEvent: FechasCollectionViewCell!
+    var colorEvent: UIColor! = UIColor(red: 100/250, green: 100/250, blue: 100/250, alpha: 0.3)
     
     let Meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre", "Diciembre"]
     let diasmes = ["Lunes","Martes","Miercoles","Jueves","Viernes"]
@@ -34,6 +38,16 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let registDate = UserDefaults.standard
+        
+        if let listEvents = registDate.value(forKey: "dateEvents") as? Data{
+            let temp = try? PropertyListDecoder().decode(Array<daySelected>.self, from: listEvents)
+            
+            dateEventsVC = temp!
+            
+            print("1")
+        }
+        
         let content = UNMutableNotificationContent()
         content.title = "Tienes un evento"
         content.body = "Body"
@@ -42,12 +56,12 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         let request = UNNotificationRequest(identifier: "testIdentifier", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     
-    currentMes = Meses[month]
-    labelmeses.text = "\(currentMes)\(year)"
+        currentMes = Meses[month]
+        labelmeses.text = "\(currentMes)\(year)"
         if weekday == 0{
             weekday = 7
         }
-     GetStartDateDayPosition()
+        GetStartDateDayPosition()
     }
 
    
@@ -166,6 +180,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendario", for: indexPath)as! FechasCollectionViewCell
         cell.backgroundColor = UIColor.clear
         cell.fechalabel.textColor = UIColor.red
+        
         //cell.fechalabel.text = "\(indexPath.row + 1)"
         if cell.isHidden{
             cell.isHidden = false 
@@ -180,11 +195,10 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         default:
             fatalError()
         }
-    
-        
-    if Int(cell.fechalabel.text!)! < 1{
-    cell.isHidden = true
-    }
+        if Int(cell.fechalabel.text!)! < 1{
+            cell.isHidden = true
+            
+        }
         switch indexPath.row {
         case 5,6,12,13,19,20,26,27,33,34:
             if Int(cell.fechalabel.text!)! > 0{
@@ -197,11 +211,22 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
          cell.backgroundColor = UIColor.yellow
         }
         
-      return cell
-}
+        //Revisa si hay un evento en la fecha
+        for i in 1...dateEventsVC.count {
+            if cell.fechalabel.text! == dateEventsVC[i - 1].day {
+                if currentMes == dateEventsVC[i - 1].month {
+                    cell.backgroundColor = colorEvent
+                }
+            }
+        }
+        
+        return cell
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = (collectionView.cellForItem(at: indexPath)! as? FechasCollectionViewCell)!
+        
         
         cell.backgroundColor = UIColor.init(red: 2/250, green: 2/250, blue: 200/250, alpha: 0.3)
         
@@ -214,15 +239,22 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         
         self.performSegue(withIdentifier: "toRegistrarDatos", sender: nil)
     }
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = (collectionView.cellForItem(at: indexPath)! as? FechasCollectionViewCell)!
-        cell.backgroundColor = UIColor.white
+        guard isEventVC == true else {
+            cell.backgroundColor = UIColor.white
+            
+            return
+        }
+        cell.backgroundColor = colorEvent
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toRegistrarDatos"{
-
+            
             let indexPath = Calendario.indexPathsForSelectedItems
-
+            
             let destino = segue.destination as? RegistrarDatosViewController
             
             destino?.dia = dayS
