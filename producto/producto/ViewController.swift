@@ -37,7 +37,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         let content = UNMutableNotificationContent()
         content.title = "Tienes un evento"
         content.body = "Body"
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: "testIdentifier", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)

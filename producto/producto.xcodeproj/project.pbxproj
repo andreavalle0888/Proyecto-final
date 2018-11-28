@@ -71,15 +71,15 @@
 				FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */,
 				FAD8EE3021A5AFE400D92B05 /* ViewController.swift */,
 				FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */,
-				FAD8EE4021A5B3DB00D92B05 /* FechasCollectionViewCell.swift */,
 				FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */,
+				FA2CD52521AC9811002E3E75 /* addManualViewController.swift */,
 				FAD8EE3221A5AFE400D92B05 /* Main.storyboard */,
 				FAD8EE3521A5AFE500D92B05 /* Assets.xcassets */,
 				FAD8EE3721A5AFE500D92B05 /* LaunchScreen.storyboard */,
 				FAD8EE3A21A5AFE500D92B05 /* Info.plist */,
+				FAD8EE4021A5B3DB00D92B05 /* FechasCollectionViewCell.swift */,
 				FAD8EE4221A5B5B700D92B05 /* Calendariovar.swift */,
 				FADB585F21AC55D20014BBDA /* daySelected.swift */,
-				FA2CD52521AC9811002E3E75 /* addManualViewController.swift */,
 			);
 			path = producto;
 			sourceTree = "<group>";
@@ -318,7 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = producto/producto.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53TQ588SJ5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = producto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -338,7 +338,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = producto/producto.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53TQ588SJ5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = producto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (

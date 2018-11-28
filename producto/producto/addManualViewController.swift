@@ -27,20 +27,19 @@ class addManualViewController: UIViewController {
     }
 
     @IBAction func pickerAction(_ sender: UIDatePicker) {
-        var dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "Month"
-        var m = dateFormatter.string(from: pickerOutlet.date)
-        month = meses[Int(m)!-1]
-        dateFormatter.dateFormat = "dd"
-        strDate = dateFormatter.string(from: pickerOutlet.date)
-
+        getDatePicker()
     }
     
     @IBAction func guardar(_ sender: UIButton) {
         
+        getDatePicker()
+        
         let registD = UserDefaults.standard
         
+        guard strDate != nil else { return }
+        
         dateRegist = daySelected(day: strDate, month: month, description: actividad.text! )
+        
         
         if let listEvents = registD.value(forKey: "dateEvents") as? Data{
             let temp = try? PropertyListDecoder().decode(Array<daySelected>.self, from: listEvents)
@@ -60,5 +59,12 @@ class addManualViewController: UIViewController {
         
     }
     
-    
+    func getDatePicker() {
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "Month"
+        var m = dateFormatter.string(from: pickerOutlet.date)
+        month = meses[Int(m)!-1]
+        dateFormatter.dateFormat = "dd"
+        strDate = dateFormatter.string(from: pickerOutlet.date)
+    }
 }
