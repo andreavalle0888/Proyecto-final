@@ -39,7 +39,8 @@ class addManualViewController: UIViewController {
         guard strDate != nil else { return }
         
         dateRegist = daySelected(day: strDate, month: month, description: actividad.text! )
-        
+        print(dateCollectionR)
+        print(registD)
         
         if let listEvents = registD.value(forKey: "dateEvents") as? Data{
             let temp = try? PropertyListDecoder().decode(Array<daySelected>.self, from: listEvents)

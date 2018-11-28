@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA05CFB021AF20C800DA76D9 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05CFAF21AF20C800DA76D9 /* ActivitiesViewController.swift */; };
+		FA05CFB221AF341200DA76D9 /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05CFB121AF341200DA76D9 /* ActivitiesTableViewCell.swift */; };
 		FA12EDAC21A8A632000F3C8D /* RegistrarDatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */; };
 		FA2CD52621AC9811002E3E75 /* addManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CD52521AC9811002E3E75 /* addManualViewController.swift */; };
 		FA2EC7C421A70F5F00587462 /* paginadeinicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA05CFAF21AF20C800DA76D9 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		FA05CFB121AF341200DA76D9 /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
 		FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarDatosViewController.swift; sourceTree = "<group>"; };
 		FA2CD52521AC9811002E3E75 /* addManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addManualViewController.swift; sourceTree = "<group>"; };
 		FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paginadeinicioViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				FAD8EE4021A5B3DB00D92B05 /* FechasCollectionViewCell.swift */,
 				FAD8EE4221A5B5B700D92B05 /* Calendariovar.swift */,
 				FADB585F21AC55D20014BBDA /* daySelected.swift */,
+				FA05CFAF21AF20C800DA76D9 /* ActivitiesViewController.swift */,
+				FA05CFB121AF341200DA76D9 /* ActivitiesTableViewCell.swift */,
 			);
 			path = producto;
 			sourceTree = "<group>";
@@ -165,8 +171,10 @@
 			files = (
 				FA12EDAC21A8A632000F3C8D /* RegistrarDatosViewController.swift in Sources */,
 				FADB586021AC55D20014BBDA /* daySelected.swift in Sources */,
+				FA05CFB221AF341200DA76D9 /* ActivitiesTableViewCell.swift in Sources */,
 				FAD8EE3121A5AFE400D92B05 /* ViewController.swift in Sources */,
 				FAD8EE4321A5B5B700D92B05 /* Calendariovar.swift in Sources */,
+				FA05CFB021AF20C800DA76D9 /* ActivitiesViewController.swift in Sources */,
 				FAD8EE2F21A5AFE400D92B05 /* AppDelegate.swift in Sources */,
 				FA2EC7C421A70F5F00587462 /* paginadeinicioViewController.swift in Sources */,
 				FA2CD52621AC9811002E3E75 /* addManualViewController.swift in Sources */,
