@@ -12,6 +12,7 @@
 		FA12EDAC21A8A632000F3C8D /* RegistrarDatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */; };
 		FA2CD52621AC9811002E3E75 /* addManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CD52521AC9811002E3E75 /* addManualViewController.swift */; };
 		FA2EC7C421A70F5F00587462 /* paginadeinicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */; };
+		FA9AAB7321AF45A0004A3C4D /* Bienvenido.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AAB7221AF45A0004A3C4D /* Bienvenido.swift */; };
 		FAD8EE2F21A5AFE400D92B05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */; };
 		FAD8EE3121A5AFE400D92B05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8EE3021A5AFE400D92B05 /* ViewController.swift */; };
 		FAD8EE3421A5AFE400D92B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD8EE3221A5AFE400D92B05 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarDatosViewController.swift; sourceTree = "<group>"; };
 		FA2CD52521AC9811002E3E75 /* addManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addManualViewController.swift; sourceTree = "<group>"; };
 		FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paginadeinicioViewController.swift; sourceTree = "<group>"; };
+		FA9AAB7221AF45A0004A3C4D /* Bienvenido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bienvenido.swift; sourceTree = "<group>"; };
 		FAD8EE2B21A5AFE400D92B05 /* producto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = producto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD8EE3021A5AFE400D92B05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,8 +77,8 @@
 				FAD8EE2E21A5AFE400D92B05 /* AppDelegate.swift */,
 				FAD8EE3021A5AFE400D92B05 /* ViewController.swift */,
 				FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */,
-				FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */,
 				FA2CD52521AC9811002E3E75 /* addManualViewController.swift */,
+				FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */,
 				FAD8EE3221A5AFE400D92B05 /* Main.storyboard */,
 				FAD8EE3521A5AFE500D92B05 /* Assets.xcassets */,
 				FAD8EE3721A5AFE500D92B05 /* LaunchScreen.storyboard */,
@@ -86,6 +88,7 @@
 				FADB585F21AC55D20014BBDA /* daySelected.swift */,
 				FA05CFAF21AF20C800DA76D9 /* ActivitiesViewController.swift */,
 				FA05CFB121AF341200DA76D9 /* ActivitiesTableViewCell.swift */,
+				FA9AAB7221AF45A0004A3C4D /* Bienvenido.swift */,
 			);
 			path = producto;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA12EDAC21A8A632000F3C8D /* RegistrarDatosViewController.swift in Sources */,
+				FA9AAB7321AF45A0004A3C4D /* Bienvenido.swift in Sources */,
 				FADB586021AC55D20014BBDA /* daySelected.swift in Sources */,
 				FA05CFB221AF341200DA76D9 /* ActivitiesTableViewCell.swift in Sources */,
 				FAD8EE3121A5AFE400D92B05 /* ViewController.swift in Sources */,

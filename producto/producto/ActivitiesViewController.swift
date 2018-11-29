@@ -50,38 +50,6 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         
         return cell!
     }
-
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceview, completion) in
-            
-            //self.dateCollectionR.remove(at: indexPath.row)
-            let registD = UserDefaults.standard
-
-            if let listEvents = registD.value(forKey: "dateEvents") as? Data{
-                let temp = try? PropertyListDecoder().decode(Array<daySelected>.self, from: listEvents)
-                
-                self.dateCollectionR = temp!
-            }
-            
-            self.dateCollectionR.remove(at: indexPath.row)
-
-            
-            registD.set(try? PropertyListEncoder().encode(self.dateCollectionR), forKey: "dateEvents")
-            
-            print(self.dateCollectionR)
-            
-            self.activitiesTable.deleteRows(at: [indexPath], with: .fade )
-            
-            completion(true)
-            
-        }
-        
-        
-        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
-        
-        return swipeConfiguration
-        
-    }
     
 }
