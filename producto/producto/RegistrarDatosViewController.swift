@@ -16,6 +16,7 @@ class RegistrarDatosViewController: UIViewController {
     var dateRegist: daySelected!
     var dateCollectionR = [daySelected]()
     var isEvent: Bool! = false
+    var segueVC: UIViewController! = nil
     
     @IBOutlet weak var mesRegisting: UILabel!
     @IBOutlet weak var diaRegisting: UILabel!
@@ -58,13 +59,27 @@ class RegistrarDatosViewController: UIViewController {
         
         isEvent = true
         
+//        performSegue(withIdentifier: "toCalendar", sender: nil)
+        
+        prepare(for: UIStoryboardSegue, sender: Any?)
+        
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let viewCalendar = segue.destination as? ViewController
         
+        segueVC = viewCalendar
+        
+        viewCalendar?.Calendario.reloadData()
         //si se agregó un evento esto será true
         viewCalendar?.isEventVC = isEvent
+    }
+    
+    @IBAction func cancel(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }

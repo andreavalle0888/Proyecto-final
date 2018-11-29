@@ -62,9 +62,25 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             weekday = 7
         }
         GetStartDateDayPosition()
+        
+        Calendario.reloadData()
     }
     
+    override func willMove(toParent parent: UIViewController?) {
+        Calendario.reloadData()
+    }
     
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        Calendario.reloadData()
+    }
+    
+    override func willChangeValue(forKey key: String) {
+        Calendario.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Calendario.reloadData()
+    }
     
     @IBAction func siguiente(_ sender: Any) {
         switch currentMes {
@@ -84,7 +100,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             }
             GetStartDateDayPosition()
             currentMes = Meses[month]
-            labelmeses.text = "\(currentMes)\(year)"
+            labelmeses.text = "\(currentMes) \(year)"
             Calendario.reloadData()
         default:
             
@@ -92,7 +108,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             GetStartDateDayPosition()
             month += 1
             currentMes = Meses[month]
-            labelmeses.text = "\(currentMes)\(year)"
+            labelmeses.text = "\(currentMes) \(year)"
             Calendario.reloadData()
         }
     }
@@ -114,14 +130,14 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             }
             GetStartDateDayPosition()
             currentMes = Meses[month]
-            labelmeses.text = "\(currentMes)\(year)"
+            labelmeses.text = "\(currentMes) \(year)"
             Calendario.reloadData()
         default:
             month -= 1
             direccion = -1
             GetStartDateDayPosition()
             currentMes = Meses[month]
-            labelmeses.text = "\(currentMes)\(year)"
+            labelmeses.text = "\(currentMes) \(year)"
             Calendario.reloadData()
         }
     }
@@ -216,7 +232,9 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             for i in 1...dateEventsVC.count {
                 if cell.fechalabel.text! == dateEventsVC[i - 1].day {
                     if currentMes == dateEventsVC[i - 1].month {
-                        cell.backgroundColor = colorEvent
+//                        if year == dateEventsVC[i - 1].year as? String{
+                            cell.backgroundColor = colorEvent
+//                        }
                     }
                 }
             }

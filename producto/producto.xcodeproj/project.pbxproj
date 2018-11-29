@@ -79,6 +79,7 @@
 				FA2EC7C321A70F5F00587462 /* paginadeinicioViewController.swift */,
 				FA2CD52521AC9811002E3E75 /* addManualViewController.swift */,
 				FA12EDAB21A8A632000F3C8D /* RegistrarDatosViewController.swift */,
+				FA05CFAF21AF20C800DA76D9 /* ActivitiesViewController.swift */,
 				FAD8EE3221A5AFE400D92B05 /* Main.storyboard */,
 				FAD8EE3521A5AFE500D92B05 /* Assets.xcassets */,
 				FAD8EE3721A5AFE500D92B05 /* LaunchScreen.storyboard */,
@@ -86,7 +87,6 @@
 				FAD8EE4021A5B3DB00D92B05 /* FechasCollectionViewCell.swift */,
 				FAD8EE4221A5B5B700D92B05 /* Calendariovar.swift */,
 				FADB585F21AC55D20014BBDA /* daySelected.swift */,
-				FA05CFAF21AF20C800DA76D9 /* ActivitiesViewController.swift */,
 				FA05CFB121AF341200DA76D9 /* ActivitiesTableViewCell.swift */,
 				FA9AAB7221AF45A0004A3C4D /* Bienvenido.swift */,
 			);

@@ -34,7 +34,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="C9W-q3-KOD" kind="show" id="B5T-m0-0H0"/>
+                                    <segue destination="PA7-Jd-R9u" kind="show" id="hz9-ei-BHc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,50 +48,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbf-VF-Lh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1643.4782608695652" y="132.58928571428572"/>
+            <point key="canvasLocation" x="-2548" y="133"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="pNm-Co-EZp">
+        <!--Tab Bar Controller-->
+        <scene sceneID="FWd-ql-nmG">
             <objects>
-                <viewController id="C9W-q3-KOD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zFA-AG-TlL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m38-Nc-MEf">
-                                <rect key="frame" x="109" y="276" width="157" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Agregar un evento "/>
-                                <connections>
-                                    <segue destination="CaP-7P-BUc" kind="show" id="3xr-Zw-Z9D"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnu-zm-rB5">
-                                <rect key="frame" x="137" y="343" width="101" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ver Calendario"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="oOu-PH-b6b"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcg-Tg-iss">
-                                <rect key="frame" x="107" y="405" width="161" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Actividades registradas"/>
-                                <connections>
-                                    <segue destination="ro3-eD-sf4" kind="show" id="c4t-Qn-LKU"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="xwk-zC-WrJ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uF5-8i-WuR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="PA7-Jd-R9u" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i2n-4I-Dx0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="CaP-7P-BUc" kind="relationship" relationship="viewControllers" id="pB4-Mm-h8Z"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="UO5-7f-rPq"/>
+                        <segue destination="ro3-eD-sf4" kind="relationship" relationship="viewControllers" id="Wr5-B9-jc7"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y4v-oy-8uA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-753.62318840579712" y="131.25"/>
+            <point key="canvasLocation" x="-1019" y="131"/>
         </scene>
-        <!--Activities View Controller-->
+        <!--Item-->
         <scene sceneID="Nba-5G-Spg">
             <objects>
                 <viewController id="ro3-eD-sf4" customClass="ActivitiesViewController" customModule="producto" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,23 +128,21 @@
                                 <rect key="frame" x="167" y="752" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="regresar"/>
-                                <connections>
-                                    <segue destination="C9W-q3-KOD" kind="show" id="Ld0-sE-Pz8"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GSp-67-7Kp"/>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="2" title="Item" id="ose-xe-NOD"/>
                     <connections>
                         <outlet property="activitiesTable" destination="TF5-5s-Cu2" id="MfW-YR-pcq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDL-oA-Vvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-755.07246376811599" y="924.77678571428567"/>
+            <point key="canvasLocation" x="136" y="877"/>
         </scene>
-        <!--Add Manual View Controller-->
+        <!--Item-->
         <scene sceneID="avA-4H-bwE">
             <objects>
                 <viewController id="CaP-7P-BUc" customClass="addManualViewController" customModule="producto" customModuleProvider="target" sceneMemberID="viewController">
@@ -231,6 +207,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="D1a-HV-2sD"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="feb-4L-uwf"/>
                     <connections>
                         <outlet property="actividad" destination="dY7-Bh-oO5" id="5wq-Jz-YyO"/>
                         <outlet property="pickerOutlet" destination="SX7-4V-ITm" id="wPE-Md-qSH"/>
@@ -240,7 +217,7 @@
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="-628.33583208395805"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="producto" customModuleProvider="target" sceneMemberID="viewController">
@@ -362,6 +339,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="Item" id="Mf1-ir-O1C"/>
+                    <navigationItem key="navigationItem" id="xWc-Iz-b5b"/>
                     <connections>
                         <outlet property="Calendario" destination="yrV-Cp-OcZ" id="8Fg-Ru-wpV"/>
                         <outlet property="labelmeses" destination="GfM-Sb-8OH" id="iNB-Tw-fgn"/>
@@ -407,7 +386,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Volver al calendario"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="nJU-Wg-kl0"/>
+                                    <action selector="cancel:" destination="6T8-6A-1ql" eventType="touchUpInside" id="Efa-iQ-bk9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVa-Zb-1Nb">
@@ -425,6 +404,7 @@
                         <outlet property="descriptionRegisting" destination="dpg-Qn-NA0" id="dmS-T4-pKX"/>
                         <outlet property="diaRegisting" destination="VzF-Fe-oXx" id="WYq-h3-jXD"/>
                         <outlet property="mesRegisting" destination="MVa-Zb-1Nb" id="8ot-El-CHg"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toCalendar" id="7zG-hm-6pd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3O3-2H-gY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -433,7 +413,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oOu-PH-b6b"/>
-        <segue reference="B5T-m0-0H0"/>
+        <segue reference="UO5-7f-rPq"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,6 +22,10 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         
     }
     
+    override func willMove(toParent parent: UIViewController?) {
+        activitiesTable.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let registD = UserDefaults.standard
