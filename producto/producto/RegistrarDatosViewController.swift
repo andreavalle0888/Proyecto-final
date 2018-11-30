@@ -61,7 +61,7 @@ class RegistrarDatosViewController: UIViewController {
         
 //        performSegue(withIdentifier: "toCalendar", sender: nil)
         
-        prepare(for: UIStoryboardSegue, sender: Any?)
+        //prepare(for: UIStoryboardSegue, sender: Any?)
         
         dismiss(animated: true, completion: nil)
     }

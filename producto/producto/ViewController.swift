@@ -22,7 +22,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     var colorEvent: UIColor! = UIColor(red: 100/250, green: 100/250, blue: 100/250, alpha: 0.3)
     
     let Meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre", "Diciembre"]
-    let diasmes = ["Lunes","Martes","Miercoles","Jueves","Viernes"]
+    let diasmes = ["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
     var diasdelmes =  [31,28,31,30,31,30,31,31,30,31,30,31]
     var currentMes = String()
     var yearbi = 2
@@ -37,6 +37,12 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentMes = Meses[month]
+        labelmeses.text = "\(currentMes)\(year)"
+        if weekday == 0{
+            weekday = 7
+        }
+        GetStartDateDayPosition()
         
         let registDate = UserDefaults.standard
         
@@ -56,17 +62,9 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         let request = UNNotificationRequest(identifier: "testIdentifier", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
-        currentMes = Meses[month]
-        labelmeses.text = "\(currentMes)\(year)"
-        if weekday == 0{
-            weekday = 7
-        }
-        GetStartDateDayPosition()
-        
-        Calendario.reloadData()
     }
     
-    override func willMove(toParent parent: UIViewController?) {
+   /* override func willMove(toParent parent: UIViewController?) {
         Calendario.reloadData()
     }
     
@@ -80,7 +78,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     
     override func viewWillDisappear(_ animated: Bool) {
         Calendario.reloadData()
-    }
+    }*/
     
     @IBAction func siguiente(_ sender: Any) {
         switch currentMes {
@@ -170,6 +168,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             if anteriornumero == 7 {
                 anteriornumero = 0
             }
+            posicion = anteriornumero
         default:
             fatalError()
         }
@@ -195,7 +194,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendario", for: indexPath)as! FechasCollectionViewCell
         cell.backgroundColor = UIColor.clear
-        cell.fechalabel.textColor = UIColor.red
+        cell.fechalabel.textColor = UIColor.black
         
         //cell.fechalabel.text = "\(indexPath.row + 1)"
         if cell.isHidden{
@@ -207,7 +206,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         case 1:
             cell.fechalabel.text = "\(indexPath.row + 1 - siguientenumero)"
         case -1:
-            cell.fechalabel.text = "\(indexPath.row + 1 - siguientenumero)"
+            cell.fechalabel.text = "\(indexPath.row + 1 - anteriornumero)"
         default:
             fatalError()
         }
@@ -223,7 +222,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         default:
             break
         }
-        if currentMes == Meses[calendario.component(.month, from: date) - 1] && year == calendario.component(.year, from: date) && indexPath.row + 1 == day{
+        if currentMes == Meses[calendario.component(.month, from: date) - 1] && year == calendario.component(.year, from: date) && indexPath.row + 1 - numero == day{
             cell.backgroundColor = UIColor.yellow
         }
         
