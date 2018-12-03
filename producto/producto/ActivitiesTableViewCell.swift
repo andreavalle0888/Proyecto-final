@@ -18,6 +18,8 @@ class ActivitiesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
 
     }
 
@@ -25,5 +27,8 @@ class ActivitiesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
+    
+
 
 }
+

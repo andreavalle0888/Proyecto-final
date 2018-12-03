@@ -17,6 +17,7 @@ class addManualViewController: UIViewController {
     var dateRegist: daySelected!
     var dateCollectionR = [daySelected]()
     var strDate: String!
+    var colorEvent: UIColor! = UIColor(hue: 1/5, saturation: 10, brightness: 0.7, alpha: 1.5)
     var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
     var month: String = ""
     var year: String!
@@ -24,6 +25,7 @@ class addManualViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pickerOutlet.setValue(colorEvent, forKeyPath: "textColor")
         // Do any additional setup after loading the view.
     }
     

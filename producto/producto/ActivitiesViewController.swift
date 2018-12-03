@@ -80,7 +80,8 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
         
         return swipeConfiguration
-        
+    
     }
 
+    
 }
