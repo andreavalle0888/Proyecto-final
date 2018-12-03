@@ -17,7 +17,7 @@ class FechasCollectionViewCell: UICollectionViewCell {
         let circuloPath = UIBezierPath(arcCenter: centrocirculo, radius: (circulo.bounds.width/2 - 5), startAngle: -CGFloat.pi/2, endAngle: (2 * CGFloat.pi), clockwise: true)
         let circuloLayer = CAShapeLayer()
         circuloLayer.path = circuloPath.cgPath
-        circuloLayer.strokeColor = UIColor.red.cgColor
+        circuloLayer.strokeColor = UIColor.blue.cgColor
         circuloLayer.lineWidth = 2
         circuloLayer.strokeEnd = 0
         circuloLayer.fillColor = UIColor.clear.cgColor

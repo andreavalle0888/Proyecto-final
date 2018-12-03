@@ -19,7 +19,8 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     var isEventVC: Bool! = false
     var dateEventsVC = [daySelected]()
     var cellSelectedEvent: FechasCollectionViewCell!
-    var colorEvent: UIColor! = UIColor(red: 100/250, green: 100/250, blue: 100/250, alpha: 0.3)
+    
+    var colorEvent: UIColor! = UIColor(hue: 1/5, saturation: 7.5, brightness: 0.9, alpha: 0.25)
     var searchMonth: String!
     var searchYear = ""
     
