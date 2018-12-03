@@ -43,6 +43,13 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         let cell = activitiesTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ActivitiesTableViewCell
         
         //cell?.actividad.text = userLoginList[indexPath.row].username
+        if indexPath.row % 2 == 0{
+            cell?.backgroundColor = UIColor(hue: 2/4, saturation: 7.5, brightness: 0.9, alpha: 0.25)
+        }
+        else
+        {
+            cell?.backgroundColor = UIColor(hue: 1/5, saturation: 7.5, brightness: 0.9, alpha: 0.25)
+        }
         
         cell?.actividad.text = dateCollectionR[indexPath.row].description
         cell?.mes.text = dateCollectionR[indexPath.row].month
