@@ -252,14 +252,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayS-RP-GcB">
-                                <rect key="frame" x="137" y="498" width="100" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="guardar"/>
-                                <connections>
-                                    <action selector="guardar:" destination="CaP-7P-BUc" eventType="touchUpInside" id="DSs-DA-mo0"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rO-Qg-had">
                                 <rect key="frame" x="20" y="60" width="76" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -313,8 +305,20 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="style-Lines" translatesAutoresizingMaskIntoConstraints="NO" id="Us1-qh-6Za">
+                                <rect key="frame" x="0.0" y="639" width="414" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayS-RP-GcB">
+                                <rect key="frame" x="157" y="517" width="100" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="guardar"/>
+                                <connections>
+                                    <action selector="guardar:" destination="CaP-7P-BUc" eventType="touchUpInside" id="DSs-DA-mo0"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNz-EB-PbN">
-                                <rect key="frame" x="156" y="599" width="62" height="24"/>
+                                <rect key="frame" x="176" y="618" width="62" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Guardar">
@@ -328,10 +332,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="style-Lines" translatesAutoresizingMaskIntoConstraints="NO" id="Us1-qh-6Za">
-                                <rect key="frame" x="0.0" y="639" width="414" height="257"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="D1a-HV-2sD"/>
@@ -669,15 +669,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Agregar" width="512" height="512"/>
-        <image name="Regis" width="512" height="512"/>
-        <image name="calendarGreen" width="400" height="400"/>
-        <image name="guardar" width="128" height="128"/>
-        <image name="regreso" width="64" height="64"/>
-        <image name="style-Lines" width="5095" height="2821"/>
+        <image name="Agregar" width="201.442626953125" height="201.442626953125"/>
+        <image name="Regis" width="201.442626953125" height="201.442626953125"/>
+        <image name="calendarGreen" width="201.39860534667969" height="201.39860534667969"/>
+        <image name="guardar" width="200.34782409667969" height="200.34782409667969"/>
+        <image name="regreso" width="200.34782409667969" height="200.34782409667969"/>
+        <image name="style-Lines" width="1222.800048828125" height="677"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oOu-PH-b6b"/>
-        <segue reference="EB7-9r-ugQ"/>
+        <segue reference="snc-eC-kGn"/>
     </inferredMetricsTieBreakers>
 </document>
