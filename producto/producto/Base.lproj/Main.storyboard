@@ -23,20 +23,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRw-JW-XYU">
-                                <rect key="frame" x="0.0" y="89" width="394" height="601"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzI-9M-uJq" customClass="bienvenido" customModule="producto" customModuleProvider="target">
-                                <rect key="frame" x="126" y="737" width="162" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="34"/>
-                                <state key="normal" title="Bienvenido ">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="C9W-q3-KOD" kind="show" id="B5T-m0-0H0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="R33-aM-ETY"/>
@@ -44,6 +33,7 @@
                     <connections>
                         <outlet property="pagecontrol" destination="YnI-Eq-L4U" id="cYd-3y-woZ"/>
                         <outlet property="scrollcontrol" destination="aRw-JW-XYU" id="zh5-As-rU3"/>
+                        <segue destination="C9W-q3-KOD" kind="show" identifier="toAplication" id="EB7-9r-ugQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbf-VF-Lh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -58,16 +48,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m38-Nc-MEf">
-                                <rect key="frame" x="119" y="97" width="158" height="174"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="style-Lines" translatesAutoresizingMaskIntoConstraints="NO" id="CSE-yf-Aum">
+                                <rect key="frame" x="0.0" y="639" width="414" height="257"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Agregar un evento " image="Agregar"/>
-                                <connections>
-                                    <segue destination="CaP-7P-BUc" kind="show" id="3xr-Zw-Z9D"/>
-                                </connections>
-                            </button>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcg-Tg-iss">
-                                <rect key="frame" x="105" y="463" width="166" height="168"/>
+                                <rect key="frame" x="126" y="526" width="166" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Actividades registradas" image="registro"/>
                                 <connections>
@@ -75,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nnu-zm-rB5">
-                                <rect key="frame" x="100" y="279" width="177" height="176"/>
+                                <rect key="frame" x="119" y="319" width="177" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.4165423506" green="0.74258949939999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="calendarGreen">
@@ -93,21 +79,8 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="oOu-PH-b6b"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoP-pm-yES">
-                                <rect key="frame" x="119" y="269" width="146" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Agregar un evento ">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Avenir-LightOblique"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrB-Rm-kac">
-                                <rect key="frame" x="147" y="444" width="83" height="24"/>
+                                <rect key="frame" x="166" y="484" width="83" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Calendario">
@@ -122,7 +95,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnr-Va-y33">
-                                <rect key="frame" x="96" y="626" width="181" height="24"/>
+                                <rect key="frame" x="117" y="689" width="181" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Actividades Registradas">
@@ -131,6 +104,27 @@
                                             <font key="NSFont" size="17" name="Avenir-LightOblique"/>
                                             <font key="NSOriginalFont" size="17" name="Avenir-LightOblique"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m38-Nc-MEf">
+                                <rect key="frame" x="128" y="93" width="158" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Agregar un evento " image="Agregar"/>
+                                <connections>
+                                    <segue destination="CaP-7P-BUc" kind="show" id="3xr-Zw-Z9D"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoP-pm-yES">
+                                <rect key="frame" x="128" y="265" width="146" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Agregar un evento ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Avenir-LightOblique"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -214,6 +208,10 @@
                                     <outlet property="delegate" destination="ro3-eD-sf4" id="6fi-UM-dSy"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="style-Lines" translatesAutoresizingMaskIntoConstraints="NO" id="r8I-8b-SHW">
+                                <rect key="frame" x="0.0" y="639" width="414" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GSp-67-7Kp"/>
@@ -330,6 +328,10 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="style-Lines" translatesAutoresizingMaskIntoConstraints="NO" id="Us1-qh-6Za">
+                                <rect key="frame" x="0.0" y="639" width="414" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="D1a-HV-2sD"/>
@@ -542,6 +544,10 @@
                                     <segue destination="C9W-q3-KOD" kind="show" id="GWr-ri-vY9"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="style-Lines" translatesAutoresizingMaskIntoConstraints="NO" id="WNo-dd-bid">
+                                <rect key="frame" x="-4" y="639" width="414" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -663,14 +669,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Agregar" width="512" height="512"/>
-        <image name="calendarGreen" width="400" height="400"/>
-        <image name="guardar" width="128" height="128"/>
-        <image name="registro" width="512" height="512"/>
-        <image name="regreso" width="64" height="64"/>
+        <image name="Agregar" width="201.442626953125" height="201.442626953125"/>
+        <image name="calendarGreen" width="201.39860534667969" height="201.39860534667969"/>
+        <image name="guardar" width="200.34782409667969" height="200.34782409667969"/>
+        <image name="registro" width="201.442626953125" height="201.442626953125"/>
+        <image name="regreso" width="200.34782409667969" height="200.34782409667969"/>
+        <image name="style-Lines" width="1222.800048828125" height="677"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oOu-PH-b6b"/>
-        <segue reference="GWr-ri-vY9"/>
+        <segue reference="EB7-9r-ugQ"/>
     </inferredMetricsTieBreakers>
 </document>
