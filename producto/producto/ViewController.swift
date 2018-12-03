@@ -20,6 +20,8 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     var dateEventsVC = [daySelected]()
     var cellSelectedEvent: FechasCollectionViewCell!
     var colorEvent: UIColor! = UIColor(red: 100/250, green: 100/250, blue: 100/250, alpha: 0.3)
+    var searchMonth: String!
+    var searchYear = ""
     
     let Meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre", "Diciembre"]
     let diasmes = ["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
@@ -61,7 +63,9 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        Calendario.reloadData()
+    }
     
     @IBAction func siguiente(_ sender: Any) {
         switch currentMes {
@@ -207,17 +211,35 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             cell.circulo.isHidden = false
             cell.dibujacirculo()
         }
-
+        
+        searchMonth = labelmeses.text!
+        
+        var b3 = searchMonth.removeLast()
+        var b2 = searchMonth.removeLast()
+        var b1 = searchMonth.removeLast()
+        var b = searchMonth.removeLast()
+        
+        searchYear.append(b)
+        searchYear.append(b1)
+        searchYear.append(b2)
+        searchYear.append(b3)
+        
+        print(searchYear)
+        
         //Revisa si hay un evento en la fecha
         if dateEventsVC.count != 0 {
             for i in 1...dateEventsVC.count {
                 if cell.fechalabel.text! == dateEventsVC[i - 1].day {
                     if currentMes == dateEventsVC[i - 1].month {
-                        cell.backgroundColor = colorEvent
+                        if searchYear == dateEventsVC[i - 1].year {
+                            cell.backgroundColor = colorEvent
+                        }
                     }
                 }
             }
         }
+        
+        searchYear.removeAll()
         
         return cell
     }

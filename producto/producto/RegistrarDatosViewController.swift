@@ -58,7 +58,8 @@ class RegistrarDatosViewController: UIViewController {
         
         isEvent = true
         
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toCalendar", sender: nil)
+//        dismiss(animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
