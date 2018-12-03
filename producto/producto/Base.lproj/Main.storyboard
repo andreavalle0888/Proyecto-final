@@ -55,7 +55,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcg-Tg-iss">
                                 <rect key="frame" x="126" y="526" width="166" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Actividades registradas" image="registro"/>
+                                <state key="normal" title="Actividades registradas" image="Regis"/>
                                 <connections>
                                     <segue destination="ro3-eD-sf4" kind="show" id="c4t-Qn-LKU"/>
                                 </connections>
@@ -669,12 +669,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Agregar" width="201.442626953125" height="201.442626953125"/>
-        <image name="calendarGreen" width="201.39860534667969" height="201.39860534667969"/>
-        <image name="guardar" width="200.34782409667969" height="200.34782409667969"/>
-        <image name="registro" width="201.442626953125" height="201.442626953125"/>
-        <image name="regreso" width="200.34782409667969" height="200.34782409667969"/>
-        <image name="style-Lines" width="1222.800048828125" height="677"/>
+        <image name="Agregar" width="512" height="512"/>
+        <image name="Regis" width="512" height="512"/>
+        <image name="calendarGreen" width="400" height="400"/>
+        <image name="guardar" width="128" height="128"/>
+        <image name="regreso" width="64" height="64"/>
+        <image name="style-Lines" width="5095" height="2821"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oOu-PH-b6b"/>
