@@ -179,6 +179,7 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         cell.backgroundColor = UIColor.clear
         cell.fechalabel.textColor = UIColor.black
         cell.circulo.isHidden = true
+        cell.layer.cornerRadius = 25
         
         if cell.isHidden{
             cell.isHidden = false
