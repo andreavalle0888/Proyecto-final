@@ -26,32 +26,40 @@ class paginadeinicioViewController: UIViewController, UIScrollViewDelegate{
             imgView.image = UIImage(named: galeriaimagenes[index])
             self.scrollcontrol.addSubview(imgView)
         }
+        print("a")
         
         scrollcontrol.contentSize = CGSize(width: scrollcontrol.frame.size.width * CGFloat(galeriaimagenes.count), height: scrollcontrol.frame.size.height)
         scrollcontrol.delegate = self
+        print("b")
     }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             stoppedScrolling()
         }
+        print("c")
     }
     
     @objc func hadleSwipe(gesture: UISwipeGestureRecognizer){
         let originalLocation = self.scrollcontrol.center
         if gesture.direction == UISwipeGestureRecognizer.Direction.left{
             performSegue(withIdentifier: "toAplication", sender: nil)
+            print("m")
         }
+        print("d")
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         var pagenumber = scrollcontrol.contentOffset.x / scrollcontrol.frame.size.width
         pagecontrol.currentPage = Int(pagenumber)
         stoppedScrolling()
+        print("e")
     }
     
     func stoppedScrolling() {
         let swipeRigthGesture = UISwipeGestureRecognizer(target: self, action: #selector(hadleSwipe(gesture:)))
         swipeRigthGesture.direction = UISwipeGestureRecognizer.Direction.left
         scrollcontrol.addGestureRecognizer(swipeRigthGesture)
+        print("f")
     }
+    
 }
