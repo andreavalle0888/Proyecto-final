@@ -14,11 +14,11 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     @IBOutlet weak var Calendario: UICollectionView!
     @IBOutlet weak var labelmeses: UILabel!
     
-    var dayS: String!
     var monthS: String!
     var yearS: String!
     var dateEventsVC = [daySelected]()
     var cellSelectedEvent: FechasCollectionViewCell!
+    var dateOfEvent: daySelected!
     
     var colorEvent: UIColor! = UIColor(hue: 1/5, saturation: 7.5, brightness: 0.9, alpha: 0.25)
     
@@ -179,7 +179,6 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         cell.backgroundColor = UIColor.clear
         cell.fechalabel.textColor = UIColor.black
         cell.circulo.isHidden = true
-        cell.layer.cornerRadius = 25
         
         if cell.isHidden{
             cell.isHidden = false
@@ -239,13 +238,14 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         
         guard cell.fechalabel.text != nil else { return }
         
-        dayS = cell.fechalabel.text as! String
         monthS = labelmeses.text as! String
         
         monthS.removeLast()
         monthS.removeLast()
         monthS.removeLast()
         monthS.removeLast()
+        
+        dateOfEvent = daySelected(day: cell.fechalabel.text!, month: monthS, year: yearS, description: "")
         
         self.performSegue(withIdentifier: "toRegistrarDatos", sender: nil)
     }
@@ -265,9 +265,9 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             
             let destino = segue.destination as? RegistrarDatosViewController
             
-            destino?.dia = dayS
-            destino?.mes = monthS
-            destino?.año = yearS
+            destino?.dateRegist = dateOfEvent
+            destino?.monthStr = Meses
+            destino?.daysForMonth = diasmes
         }
     }
 }

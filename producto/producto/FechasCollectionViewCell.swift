@@ -14,21 +14,19 @@ class FechasCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var fechalabel: UILabel!
     func dibujacirculo() {
         let centrocirculo = circulo.center
-        let circuloPath = CGMutablePath()
-        circuloPath.addArc(center: centrocirculo, radius: (circulo.bounds.width/2 - 5), startAngle:  -CGFloat.pi/2, endAngle: (2 * CGFloat.pi), clockwise: true)
+        let circuloPath = UIBezierPath(arcCenter: centrocirculo, radius: (circulo.bounds.width/2 - 5), startAngle: -CGFloat.pi/2, endAngle: (2 * CGFloat.pi), clockwise: true)
         let circuloLayer = CAShapeLayer()
-        circuloLayer.path = circuloPath
+        circuloLayer.path = circuloPath.cgPath
         circuloLayer.strokeColor = UIColor.blue.cgColor
         circuloLayer.lineWidth = 2
+        circuloLayer.strokeEnd = 0
         circuloLayer.fillColor = UIColor.clear.cgColor
-        
+        circuloLayer.lineCap = CAShapeLayerLineCap.round
         let animacion = CABasicAnimation(keyPath: "strokeEnd")
-        animacion.duration = 5
-        animacion.fromValue = 0.0
+        animacion.duration = 10
         animacion.toValue = 1
-        animacion.repeatCount = Float.greatestFiniteMagnitude
-        
-        circuloLayer.add(animacion, forKey: "strokeEndAnimation")
+        animacion.isRemovedOnCompletion = false
+        circuloLayer.add(animacion, forKey: nil)
         circulo.layer.addSublayer(circuloLayer)
         circulo.layer.backgroundColor = UIColor.clear.cgColor
     }
