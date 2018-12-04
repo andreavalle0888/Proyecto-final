@@ -16,13 +16,11 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     
     var dayS: String!
     var monthS: String!
-    var isEventVC: Bool! = false
+    var yearS: String!
     var dateEventsVC = [daySelected]()
     var cellSelectedEvent: FechasCollectionViewCell!
     
     var colorEvent: UIColor! = UIColor(hue: 1/5, saturation: 7.5, brightness: 0.9, alpha: 0.25)
-    var searchMonth: String!
-    var searchYear = ""
     
     let Meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre", "Diciembre"]
     let diasmes = ["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
@@ -213,34 +211,20 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             cell.dibujacirculo()
         }
         
-        searchMonth = labelmeses.text!
-        
-        var b3 = searchMonth.removeLast()
-        var b2 = searchMonth.removeLast()
-        var b1 = searchMonth.removeLast()
-        var b = searchMonth.removeLast()
-        
-        searchYear.append(b)
-        searchYear.append(b1)
-        searchYear.append(b2)
-        searchYear.append(b3)
-        
-        print(searchYear)
+        yearS = String(year)
         
         //Revisa si hay un evento en la fecha
         if dateEventsVC.count != 0 {
             for i in 1...dateEventsVC.count {
                 if cell.fechalabel.text! == dateEventsVC[i - 1].day {
                     if currentMes == dateEventsVC[i - 1].month {
-                        if searchYear == dateEventsVC[i - 1].year {
+                        if yearS == dateEventsVC[i - 1].year {
                             cell.backgroundColor = colorEvent
                         }
                     }
                 }
             }
         }
-        
-        searchYear.removeAll()
         
         return cell
     }
@@ -254,33 +238,35 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         
         guard cell.fechalabel.text != nil else { return }
         
-        print(cell.fechalabel.text!)
-        print(labelmeses.text!)
         dayS = cell.fechalabel.text as! String
         monthS = labelmeses.text as! String
+        
+        monthS.removeLast()
+        monthS.removeLast()
+        monthS.removeLast()
+        monthS.removeLast()
         
         self.performSegue(withIdentifier: "toRegistrarDatos", sender: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = (collectionView.cellForItem(at: indexPath)! as? FechasCollectionViewCell)!
-        guard isEventVC == true else {
-            cell.backgroundColor = UIColor.white
-            
-            return
-        }
-        cell.backgroundColor = colorEvent
+//        guard isEventVC == true else {
+//            cell.backgroundColor = UIColor.white
+//
+//            return
+//        }
+//        cell.backgroundColor = colorEvent
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toRegistrarDatos"{
             
-            let indexPath = Calendario.indexPathsForSelectedItems
-            
             let destino = segue.destination as? RegistrarDatosViewController
             
             destino?.dia = dayS
             destino?.mes = monthS
+            destino?.año = yearS
         }
     }
 }
