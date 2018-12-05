@@ -44,7 +44,7 @@
         <scene sceneID="pNm-Co-EZp">
             <objects>
                 <viewController id="C9W-q3-KOD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zFA-AG-TlL">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="viewController" id="zFA-AG-TlL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -693,6 +693,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oOu-PH-b6b"/>
-        <segue reference="Ld0-sE-Pz8"/>
+        <segue reference="EB7-9r-ugQ"/>
     </inferredMetricsTieBreakers>
 </document>
