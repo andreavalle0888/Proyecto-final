@@ -28,6 +28,9 @@ class addManualViewController: UIViewController {
     var dayEvent: Int!
     var daysToEvent: Int!
     var isEvent: Bool = false
+    var yearCurrent: Int!
+    var monthCurrent: Int!
+    var dayCurrent: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,17 +38,18 @@ class addManualViewController: UIViewController {
         pickerOutlet.setValue(colorEvent, forKeyPath: "textColor")
         
         if isEvent {
+            print("--------------------holapedro")
             let content = UNMutableNotificationContent()
             content.title = "Tienes un evento el día de hoy"
             content.body = "ES HOY!!!"
             content.sound = UNNotificationSound.default
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(daysToEvent * 86400), repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(daysToEvent * 86400 + 6), repeats: false)
             let request = UNNotificationRequest(identifier: "evento", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             
             let content1 = UNMutableNotificationContent()
             content1.title = "Tienes un evento"
-            content1.body = "Programado para el día: \(dayEvent)"
+            content1.body = "Programado para el día: \(dayEvent!)"
             content1.sound = UNNotificationSound.default
             let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
             let request1 = UNNotificationRequest(identifier: "ahora", content: content1, trigger: trigger1)
@@ -94,13 +98,14 @@ class addManualViewController: UIViewController {
         dateFormatter.dateFormat = "Month"
         var m = dateFormatter.string(from: pickerOutlet.date)
         month = meses[Int(m)!-1]
-        monthEvent = Int(month)
+        dateFormatter.dateFormat = "MM"
+        monthEvent = Int(dateFormatter.string(from: date))!
         dateFormatter.dateFormat = "dd"
         strDate = dateFormatter.string(from: pickerOutlet.date)
-        dayEvent = Int(strDate)
+        dayEvent = Int(strDate)!
         dateFormatter.dateFormat = "yyyy"
         year = dateFormatter.string(from: pickerOutlet.date)
-        yearEvent = Int(year)
+        yearEvent = Int(year)!
     }
     
     func dateNotify() {
@@ -111,15 +116,15 @@ class addManualViewController: UIViewController {
         dateFormatter.locale = Locale(identifier: "es_MX")
         
         dateFormatter.dateFormat = "yyyy"
-        let yearCurrent = Int(dateFormatter.string(from: date))!
+        yearCurrent = Int(dateFormatter.string(from: date))!
         print(yearCurrent)
-        
+
         dateFormatter.dateFormat = "MM"
-        let monthCurrent = Int(dateFormatter.string(from: date))!
+        monthCurrent = Int(dateFormatter.string(from: date))!
         print(monthCurrent)
-        
+
         dateFormatter.dateFormat = "dd"
-        let dayCurrent = Int(dateFormatter.string(from: date))!
+        dayCurrent = Int(dateFormatter.string(from: date))!
         print(dayCurrent)
         
         yearEvent = Int(dateRegist.year)!
@@ -129,10 +134,17 @@ class addManualViewController: UIViewController {
         print(dayEvent)
         
         daysToEvent = daysPerMonth[monthCurrent - 1] + dayEvent - dayCurrent
+        print("----------------------hola")
         
+        print(daysToEvent)
         if  yearEvent == yearCurrent {
             if monthCurrent == monthEvent{
                 daysToEvent -= daysPerMonth[monthCurrent - 1]
+                print("----------------------")
+                print(daysToEvent)
+                print(monthCurrent)
+                print(daysPerMonth[monthCurrent - 1])
+                print("---------------------")
             } else if monthCurrent == monthEvent - 1 {
             } else {
                 for i in monthCurrent...(monthEvent - 2){
@@ -153,10 +165,9 @@ class addManualViewController: UIViewController {
                 }
             }
             print(daysToEvent)
-            
-            isEvent = true
-            
-            viewDidLoad()
         }
+        isEvent = true
+        
+        viewDidLoad()
     }
 }

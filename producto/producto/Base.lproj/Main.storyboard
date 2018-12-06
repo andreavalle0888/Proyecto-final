@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="-1643.4782608695652" y="132.58928571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="pNm-Co-EZp">
             <objects>
-                <viewController id="C9W-q3-KOD" sceneMemberID="viewController">
+                <viewController id="C9W-q3-KOD" customClass="MenuViewController" customModule="producto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="viewController" id="zFA-AG-TlL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

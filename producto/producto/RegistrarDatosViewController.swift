@@ -36,19 +36,17 @@ class RegistrarDatosViewController: UIViewController {
             content.title = "Tienes un evento el día de hoy"
             content.body = "ES HOY!!!"
             content.sound = UNNotificationSound.default
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(daysToEvent * 86400), repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(daysToEvent * 86400 + 6), repeats: false)
             let request = UNNotificationRequest(identifier: "evento", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             
             let content1 = UNMutableNotificationContent()
             content1.title = "Tienes un evento"
-            content1.body = "Programado para el día: \(dayEvent)"
+            content1.body = "Programado para el día: \(dayEvent!)"
             content1.sound = UNNotificationSound.default
             let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
             let request1 = UNNotificationRequest(identifier: "ahora", content: content1, trigger: trigger1)
             UNUserNotificationCenter.current().add(request1, withCompletionHandler: nil)
-            
-            print("hola")
             
             isEvent = false
         }
@@ -123,10 +121,10 @@ class RegistrarDatosViewController: UIViewController {
                 }
             }
             print(daysToEvent)
-            
-            isEvent = true
-            
-            viewDidLoad()
         }
+        
+        isEvent = true
+        
+        viewDidLoad()
     }
 }

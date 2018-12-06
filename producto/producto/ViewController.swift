@@ -52,14 +52,6 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             
             dateEventsVC = temp!
         }
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Bienvenido a SAJA-Agend"
-        content.body = "Ahora cada vez que crees un evento recibirás notificaciones"
-        content.sound = UNNotificationSound.default
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-        let request = UNNotificationRequest(identifier: "testIdentifier", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
