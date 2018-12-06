@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if response.notification.request.identifier == "testIdentifier"{
             print("hdhdhd")
         }
+        if response.notification.request.identifier == "ahora"{
+            print("hdhdhd")
+        }
         if let notification = response.notification.request.content.userInfo as?
             [String:AnyObject]{
             let message = parseRemoteNotification(notification: notification)

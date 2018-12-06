@@ -14,11 +14,11 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
     @IBOutlet weak var Calendario: UICollectionView!
     @IBOutlet weak var labelmeses: UILabel!
     
-    var dayS: String!
     var monthS: String!
     var yearS: String!
     var dateEventsVC = [daySelected]()
     var cellSelectedEvent: FechasCollectionViewCell!
+    var dateOfEvent: daySelected!
     
     var colorEvent: UIColor! = UIColor(hue: 1/5, saturation: 7.5, brightness: 0.9, alpha: 0.25)
     
@@ -54,10 +54,10 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         }
         
         let content = UNMutableNotificationContent()
-        content.title = "Tienes un evento"
-        content.body = "Body"
+        content.title = "Bienvenido a SAJA-Agend"
+        content.body = "Ahora cada vez que crees un evento recibirás notificaciones"
         content.sound = UNNotificationSound.default
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         let request = UNNotificationRequest(identifier: "testIdentifier", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
@@ -239,13 +239,14 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         
         guard cell.fechalabel.text != nil else { return }
         
-        dayS = cell.fechalabel.text as! String
         monthS = labelmeses.text as! String
         
         monthS.removeLast()
         monthS.removeLast()
         monthS.removeLast()
         monthS.removeLast()
+        
+        dateOfEvent = daySelected(day: cell.fechalabel.text!, month: monthS, year: yearS, description: "")
         
         self.performSegue(withIdentifier: "toRegistrarDatos", sender: nil)
     }
@@ -265,9 +266,10 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
             
             let destino = segue.destination as? RegistrarDatosViewController
             
-            destino?.dia = dayS
-            destino?.mes = monthS
-            destino?.año = yearS
+            destino?.monthEvent = Int(month + 1)
+            destino?.dateRegist = dateOfEvent
+            destino?.monthStr = Meses
+            destino?.daysPerMonth = diasdelmes
         }
     }
 }
